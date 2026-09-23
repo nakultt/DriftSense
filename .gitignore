@@ -1,74 +1,9 @@
-# Generated data — ~15 GB. Regenerate with generate_dataset.py / scripts/gen_data.py.
-data/
-sample/
-output/
-# Exception to output/: the final fixed 20-pair generator audit package ships
-# in-repo because the submission form only takes a GitHub repo link. See
-# generator/README.md (Phase 2 deliverable).
-!generator/output/
-
-# Built submission artifacts (rebuild with scripts/build_submission_zip.py).
-dist/
-# Python build artifacts (pyproject.toml). setuptools writes build/ and
-# *.egg-info/ in the working tree on every `pip install .` or wheel build.
-build/
-*.egg-info/
-
-# Environment
-venv/
+# Byte-code and local virtualenvs -- never part of the delivery.
 __pycache__/
-*.pyc
-.pytest_cache/
-.pytest-tmp/
-.uv-cache/
+*.py[cod]
+venv/
+.venv/
 
-# Local editor and Graphify workspace
-.obsidian/
-.codex/
-graphify-out/
-
-# Training artifacts (the shipped weights file itself IS committed)
-logs/
-weights/*_last.pt
-
-# Evaluation output — keep the figures and metrics the README links to,
-# ignore the scratch subdirectories individual eval runs write into.
-results/*/
-.pytest_cache/
-
-# Working notes, measured results and agent context — LOCAL ONLY, never
-# tracked. This directory was tracked until the repository turned out to be
-# public, which the earlier note here wrongly assumed it was not. Two things
-# in it must not be published:
-#
-#   PHASE2_ADDENDUM.md              transcribed from a briefing deck marked
-#                                   "Applied Materials Confidential"
-#   ORGANIZER_PHASE2_GROUND_TRUTH.md  organizer task materials, and it quotes
-#                                   the organizers' private SharePoint share
-#                                   link — a capability URL that grants
-#                                   anyone holding it access to their folder
-#
-# The rest is internal evidence (PHASE2_STATE.md, the ext_*.csv per-pair
-# results the README numbers are computed from). Keep it on disk, share it
-# with the team out of band, but do not commit it.
-.agents/
-
-# Per-epoch training checkpoints (--keep-epochs); only the promoted weights ship.
-weights/*_e[0-9]*.pt
-weights/*_p2_history.json
-
-# HF port: staging tars, isolated venv, and upload state. None of this is
-# part of the submission and none of it should be tracked.
-venv-hf/
-.hf_stage/
-.agents/hf_port_state.tsv
-# agent memory (local only)
-.dsh/
-# reference sample materials (confidential -- never commit; see docs/VERIFIED_GROUND_TRUTH.md section 9)
-.agents/ref_material/
-.agents/ref_0901/
-
-# Phase 2 extension dataset (both mentor zips combined). Marked "Applied
-# Materials Confidential" and includes the scoring key (ground_truth.csv,
-# manifest_jury.csv) -- never publish it from this public repo.
-phase2_v2/
+# Output written by a run.
+predictions.csv
+*/sample/predictions.csv

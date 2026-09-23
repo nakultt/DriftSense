@@ -1,0 +1,3 @@
+pair_id,search_path,reference_gds_path,search_gds_path,reference_sem_path,params_json_path
+p0001,search/00001.png,reference/00001.gds,search_gds/00001.gds,,
+p0000,search/00000.png,reference/00000.gds,search_gds/00000.gds,,
